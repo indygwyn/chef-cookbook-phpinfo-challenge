@@ -1,3 +1,4 @@
 # chef-cookbook-phpinfo-challenge
 
-See [TODO.md](TODO.md)
+See [Instructions](instructions.md)
+See [TODO](TODO.md)
