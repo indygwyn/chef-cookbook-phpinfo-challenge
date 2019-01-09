@@ -1,0 +1,13 @@
+name 'phpinfo'
+maintainer 'Thomas W. Holt Jr.'
+maintainer_email 'twh@pobox.com'
+license 'MIT'
+description 'Installs/Configures phpinfo'
+long_description 'Installs/Configures phpinfo'
+version '0.1.0'
+chef_version '>= 13.0'
+source_url 'https://github.com/indygwyn/chef-cookbook-phpinfo-challenge'
+issues_url 'https://github.com/indygwyn/chef-cookbook-phpinfo-challenge/issus'
+supports 'centos', '>=7.0'
+
+depends 'sshd'
