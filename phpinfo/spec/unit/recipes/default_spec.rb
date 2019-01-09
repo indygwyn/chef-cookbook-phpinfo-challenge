@@ -13,9 +13,8 @@ describe 'phpinfo::default' do
       runner.converge(described_recipe)
     end
 
-    before(:each) do
-      # Skip dat shit
-      Chef::Resource::Execute.any_instance.stub(:should_skip?).and_return(true)
+    before(:each) do # Skip dat shit
+      allow_any_instance_of(Chef::Resource::Execute).to receive(:should_skip?).and_return(true)
     end
 
     it 'converges successfully' do
