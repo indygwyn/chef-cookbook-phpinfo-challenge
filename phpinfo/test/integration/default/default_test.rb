@@ -46,6 +46,14 @@ describe directory('/var/www/html') do
   its('mode') { should cmp '0750' }
 end
 
+command('find /var/www/html -type f').stdout.split.each do |fname|
+  describe file(fname) do
+    its('owner') { should eq 'root' }
+    its('group') { should eq 'apache' }
+    its('mode') { should cmp '0644' }
+  end
+end
+
 describe http('http://localhost/') do
   its('status') { should cmp 200 }
   its('body') { should match 'PHP' }

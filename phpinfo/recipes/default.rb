@@ -40,6 +40,7 @@ end
 directory('/var/www/html') do
   owner 'root'
   group 'apache'
+  recursive true
   mode '0750'
 end
 

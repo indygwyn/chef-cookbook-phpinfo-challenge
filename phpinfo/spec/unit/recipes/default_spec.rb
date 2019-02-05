@@ -54,24 +54,19 @@ describe 'phpinfo::default' do
     #    end
 
     it 'creates /etc/httpd/conf/httpd.conf' do
-      expect(chef_run).to create_template('/etc/httpd/conf/httpd.conf').with(
-        user: 'root',
-        group: 'root'
-      )
+      expect(chef_run).to create_template('/etc/httpd/conf/httpd.conf')
+        .with( user: 'root', group: 'root')
     end
 
     it 'creates /var/www/html' do
-      expect(chef_run).to create_directory('/var/www/html').with(
-        user: 'root',
-        group: 'apache'
-      )
+      expect(chef_run).to create_directory('/var/www/html')
+        .with( user: 'root', group: 'apache')
+        .with(recursive: true)
     end
 
     it 'creates /var/www/html/index.php' do
-      expect(chef_run).to create_file('/var/www/html/index.php').with(
-        user: 'root',
-        group: 'apache'
-      )
+      expect(chef_run).to create_file('/var/www/html/index.php')
+        .with( user: 'root', group: 'apache')
     end
   end
 end
